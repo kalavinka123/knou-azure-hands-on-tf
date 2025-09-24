@@ -1,0 +1,37 @@
+## Terraform 설치하기
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+## Azure CLI 설치하기
+https://developer.hashicorp.com/terraform/tutorials/azure-get-started/azure-build
+
+## 로그인
+```
+ az login --tenant 18a63xxxxxxx                                                                                                              
+Select the account you want to log in with. For more information on login with Azure CLI, see https://go.microsoft.com/fwlink/?linkid=2271136                         
+                                                                                                                                                                      
+Retrieving subscriptions for the selection...
+
+[Tenant and subscription selection]
+
+No     Subscription name     Subscription ID                       Tenant
+-----  --------------------  ------------------------------------  ------------------------------------
+[1] *  Azure for Students    xxxxx                                  18a63xxxxxxx
+[2]    Azure subscription 1  xxxxx                                  18a63xxxxxxx
+...
+
+ az account show                                                                                                                                                     
+{                                                                                                                                                                     
+  "environmentName": "AzureCloud",                                                                                                                                    
+  "homeTenantId": "18a63xxxxxxx",
+  "id": "xxxxx",
+  "isDefault": true,
+  "managedByTenants": [],
+  "name": "Azure for Students",
+  "state": "Enabled",
+  "tenantId": "18a63xxxxxxx",
+  "user": {
+    "name": "knou-xxxxx@outlook.com",
+    "type": "user"
+  }
+}
+```

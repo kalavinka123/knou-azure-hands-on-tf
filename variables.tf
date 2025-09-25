@@ -30,7 +30,7 @@ variable "admin_public_key_path" {
 variable "db_server_name" {
   description = "Server name must be at least 3 characters and at most 63 characters. Server name must only contain lowercase letters, numbers, and hyphens."
   type        = string
-  default     = "knou-mall-dbxxxx" ## xxxx 를 고유한 이름으로 바꾸기.
+  default     = "knou-mall-dbadad" ## xxxx 를 임의의 이름으로 바꾸기.
 }
 
 variable "db_admin_password" {
@@ -41,7 +41,7 @@ variable "db_admin_password" {
 
 variable "key_vault_name" {
   type        = string
-  default     = "mall-db-keyxxxx" ## xxxx 를 고유한 이름으로 바꾸기.
+  default     = "mall-db-keytutu" ## xxxx 를 임의의 이름으로 바꾸기.
 }
 
 variable "key_vault_secret_name" {
@@ -52,5 +52,5 @@ variable "key_vault_secret_name" {
 variable "key_vault_secret_password" {
   type      = string
   sensitive = true
-  default   = "YOUR_PASSWORD" ## 키 비밀 암호(고유한 패스워드로 바꾸기)
+  default   = "YOUR_PASSWORD" ## 키 비밀 암호(임의의 패스워드로 바꾸기)
 }

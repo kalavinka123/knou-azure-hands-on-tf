@@ -33,6 +33,8 @@ resource "azurerm_postgresql_flexible_server_firewall_rule" "allow_azure_service
   end_ip_address   = "0.0.0.0"
 }
 
+## 데이터베이스를 terraform 으로 생성
+# postgresql 설치하지 않았으면 밑의 리소스를 전부 커멘트 아웃하여 실행
 resource "null_resource" "cmd_create_db" {
   provisioner "local-exec" {
     environment = {

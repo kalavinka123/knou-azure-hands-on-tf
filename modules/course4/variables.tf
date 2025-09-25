@@ -16,6 +16,11 @@ variable "knou_mall_subnet" {
   })
 }
 
+variable "admin_public_key_path" {
+  description = "Path to the SSH public key file"
+  type        = string
+}
+
 variable "tags" {
   description = "Common tags"
   type        = map(string)

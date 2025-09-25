@@ -37,6 +37,7 @@ module "step1" {
   source = "./modules/course4"
   knou_mall_rg = azurerm_resource_group.knou_mall_rg
   knou_mall_subnet = azurerm_subnet.knou_mall_subnet
+  admin_public_key_path = var.admin_public_key_path
   my_ip = var.my_ip
   tags = var.tags
 }

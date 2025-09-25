@@ -35,3 +35,13 @@ No     Subscription name     Subscription ID                       Tenant
   }
 }
 ```
+
+## 구독 아이디 환경 변수로 설정
+```
+$ export ARM_SUBSCRIPTION_ID="<SUBSCRIPTION_ID>"
+```
+
+## (선택적) postgresql 설치하기 <- 데이터베이스를 terraform 으로 생성하고 싶으면 설치 modules/course5/main.tf 참조
+https://www.postgresql.org/download/windows/
+https://wiki.postgresql.org/wiki/Homebrew
+https://www.postgresql.org/download/linux/ubuntu/

@@ -21,6 +21,12 @@ variable "my_ip" {
   default     = "xxx.xxx.xxx.xxx/32" ## 내 컴퓨터 IP 공개주소. 터미널에서 `curl ifconfig.me -4` 로 찾을 수 있음.
 }
 
+variable "admin_public_key_path" {
+  description = "Path to the SSH public key file"
+  type        = string
+  default     = "~/.ssh/xxxxx.pub" ## 공개키 경로 설정. PEM 키의 경우 `ssh-keygen -y -f sample.pem > sample.pub` 로 공개키를 추출할 수 있음.
+}
+
 variable "db_server_name" {
   description = "Server name must be at least 3 characters and at most 63 characters. Server name must only contain lowercase letters, numbers, and hyphens."
   type        = string

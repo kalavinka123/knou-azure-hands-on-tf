@@ -53,7 +53,7 @@ resource "azurerm_linux_virtual_machine" "knou_mall_vm" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("~/.ssh/sample-vm1-key.pub")
+    public_key = file(var.admin_public_key_path)
   }
 
   os_disk {

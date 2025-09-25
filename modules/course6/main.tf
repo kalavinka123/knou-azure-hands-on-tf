@@ -30,4 +30,6 @@ resource "azurerm_key_vault_secret" "knou_mall_kv_secret" {
   name         = var.key_vault_secret_name
   value        = var.key_vault_secret_password
   key_vault_id = azurerm_key_vault.knou_mall_kv.id
+
+  depends_on = [azurerm_role_assignment.knou_mall_kv_role-assignment]
 }

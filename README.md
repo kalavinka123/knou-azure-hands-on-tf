@@ -6,7 +6,7 @@
 - Terraform 인스톨
 - AZ CLI 인스톨
 - 구독 아이디 변수 설정
-- (optional) postgresql 인스톨
+- (선택사항) postgresql 인스톨
 
 2. variables.tf 값 설정하기.
 - 암호 설정

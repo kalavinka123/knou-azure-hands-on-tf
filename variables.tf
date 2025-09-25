@@ -52,5 +52,5 @@ variable "key_vault_secret_name" {
 variable "key_vault_secret_password" {
   type      = string
   sensitive = true
-  default   = "YOUR_PASSWORD" ## 키 비밀 암호
+  default   = "YOUR_PASSWORD" ## 키 비밀 암호(고유한 패스워드로 바꾸기)
 }

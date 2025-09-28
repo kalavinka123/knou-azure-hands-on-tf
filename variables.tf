@@ -24,11 +24,13 @@ variable "my_ip" {
 variable "admin_public_key_path" {
   description = "Path to the SSH public key file"
   type        = string
+  default     = "~/.ssh/xxxxx.pub" ## 공개키 경로 설정. PEM 키의 경우 `ssh-keygen -y -f sample.pem > sample.pub` 로 공개키를 추출할 수 있음.
+}
 
 variable "db_database_name" {
   description = "Target database name for CREATE DATABASE statement"
   type        = string
-  default     = "YOUR_DATABASE_NAME" ## 데이터베이스명 (임의의 이름으로 바꾸기)
+  default     = "mall-db" ## 데이터베이스명 (임의의 이름으로 바꾸기)
 }
 
 variable "db_database_name" {

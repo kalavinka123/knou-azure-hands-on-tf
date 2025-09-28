@@ -46,6 +46,7 @@ module "step2" {
   source = "./modules/course5"
   knou_mall_rg = azurerm_resource_group.knou_mall_rg
   my_ip = var.my_ip
+  db_database_name = var.db_database_name
   db_server_name = var.db_server_name
   db_admin_password = var.db_admin_password
   tags = var.tags

@@ -10,6 +10,11 @@ variable "my_ip" {
   type        = string
 }
 
+variable "db_database_name" {
+  description = "Target database name for CREATE DATABASE statement"
+  type        = string
+}
+
 variable "db_server_name" {
   description = "Server name must be at least 3 characters and at most 63 characters. Server name must only contain lowercase letters, numbers, and hyphens."
   type        = string

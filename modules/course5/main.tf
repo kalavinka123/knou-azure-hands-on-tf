@@ -40,7 +40,7 @@ resource "null_resource" "cmd_create_db" {
     environment = {
       PGPASSWORD = var.db_admin_password
     }
-    command = "psql \"postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/postgres?sslmode=require\" -c \"CREATE DATABASE knou_mall;\""
+    command = "psql \"postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/postgres?sslmode=require\" -c \"CREATE DATABASE ${var.db_database_name};\""
   }
 
   depends_on = [azurerm_postgresql_flexible_server.knou_mall_db]

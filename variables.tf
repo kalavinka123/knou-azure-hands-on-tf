@@ -2,13 +2,13 @@
 variable "location" {
   description = "Azure location for all resources"
   type        = string
-  default     = "japaneast"
+  default     = "japaneast"  ## 지역명 (임의의 지역으로 바꾸기)
 }
 
 variable "tags" {
   description = "Common tags"
   type        = map(string)
-  default     = {
+  default     = { ## 임의의 변수로 바꾸기
     application = "knou_mall"
     service = "web"
     env = "dev"
@@ -25,6 +25,12 @@ variable "admin_public_key_path" {
   description = "Path to the SSH public key file"
   type        = string
   default     = "~/.ssh/xxxxx.pub" ## 공개키 경로 설정. PEM 키의 경우 `ssh-keygen -y -f sample.pem > sample.pub` 로 공개키를 추출할 수 있음.
+}
+
+variable "db_database_name" {
+  description = "Target database name for CREATE DATABASE statement"
+  type        = string
+  default     = "mall-db" ## 데이터베이스명 (임의의 이름으로 바꾸기)
 }
 
 variable "db_server_name" {
@@ -46,7 +52,7 @@ variable "key_vault_name" {
 
 variable "key_vault_secret_name" {
   type        = string
-  default     = "knou-mall-db-admin-pwd"
+  default     = "knou-mall-db-admin-pwd"   ## 키 비밀명 (임의의 문자열로 바꾸기)
 }
 
 variable "key_vault_secret_password" {

@@ -33,12 +33,6 @@ variable "db_database_name" {
   default     = "mall-db" ## 데이터베이스명 (임의의 이름으로 바꾸기)
 }
 
-variable "db_database_name" {
-  description = "Target database name for CREATE DATABASE statement"
-  type        = string
-  default     = "mall-db" ## 데이터베이스명 (임의의 이름으로 바꾸기)
-}
-
 variable "db_server_name" {
   description = "Server name must be at least 3 characters and at most 63 characters. Server name must only contain lowercase letters, numbers, and hyphens."
   type        = string

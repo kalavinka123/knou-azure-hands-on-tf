@@ -33,14 +33,19 @@ resource "azurerm_postgresql_flexible_server_firewall_rule" "allow_azure_service
   end_ip_address   = "0.0.0.0"
 }
 
-## 데이터베이스를 terraform 으로 생성
+## 데이터베이스와 테이블을 terraform 으로 생성
 # postgresql 설치하지 않았으면 밑의 리소스를 전부 커멘트 아웃하여 실행
+# Table파일출처(정재화교수님Github): https://github.com/jaehwachung/Cloud-Computing/blob/main/knou_mall/web_server/table.sql
 resource "null_resource" "cmd_create_db" {
   provisioner "local-exec" {
     environment = {
       PGPASSWORD = var.db_admin_password
     }
-    command = "psql \"postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/postgres?sslmode=require\" -c \"CREATE DATABASE ${var.db_database_name};\""
+
+    command = <<EOT
+psql "postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/postgres?sslmode=require" -c 'CREATE DATABASE mall_db;'
+psql "postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/mall_db?sslmode=require" -f "${path.module}/../files/init.sql"
+EOT
   }
 
   depends_on = [azurerm_postgresql_flexible_server.knou_mall_db]

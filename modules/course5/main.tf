@@ -41,12 +41,24 @@ resource "null_resource" "cmd_create_db" {
     environment = {
       PGPASSWORD = var.db_admin_password
     }
-
-    command = <<EOT
-psql "postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/postgres?sslmode=require" -c 'CREATE DATABASE mall_db;'
-psql "postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/mall_db?sslmode=require" -f "${path.module}/../files/init.sql"
-EOT
+    command = "psql \"postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/postgres?sslmode=require\" -c \"CREATE DATABASE ${var.db_database_name};\""
   }
 
   depends_on = [azurerm_postgresql_flexible_server.knou_mall_db]
+}
+
+# Table생성파일 실행
+resource "null_resource" "cmd_init_db" {
+  provisioner "local-exec" {
+    environment = {
+      PGPASSWORD = var.db_admin_password
+    }
+
+    command = <<EOT
+psql "postgresql://azureuser@${azurerm_postgresql_flexible_server.knou_mall_db.fqdn}:5432/mall_db?sslmode=require" \
+  -f "${path.module}/../files/init.sql"
+EOT
+  }
+
+  depends_on = [null_resource.cmd_create_db]
 }

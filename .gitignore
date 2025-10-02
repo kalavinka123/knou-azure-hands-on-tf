@@ -23,3 +23,5 @@ terraform.tfvars
 .DS_Store
 .vscode/
 .idea/
+
+*.tf text eol=lf

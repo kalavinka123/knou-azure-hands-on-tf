@@ -34,31 +34,31 @@ resource "azurerm_subnet" "knou_mall_subnet" {
 }
 
 module "step1" {
-  source = "./modules/course4"
-  knou_mall_rg = azurerm_resource_group.knou_mall_rg
-  knou_mall_subnet = azurerm_subnet.knou_mall_subnet
+  source                = "./modules/course4"
+  knou_mall_rg          = azurerm_resource_group.knou_mall_rg
+  knou_mall_subnet      = azurerm_subnet.knou_mall_subnet
   admin_public_key_path = var.admin_public_key_path
-  my_ip = var.my_ip
-  tags = var.tags
+  my_ip                 = var.my_ip
+  tags                  = var.tags
 }
 
 module "step2" {
-  source = "./modules/course5"
-  knou_mall_rg = azurerm_resource_group.knou_mall_rg
-  my_ip = var.my_ip
-  db_database_name = var.db_database_name
-  db_server_name = var.db_server_name
+  source            = "./modules/course5"
+  knou_mall_rg      = azurerm_resource_group.knou_mall_rg
+  my_ip             = var.my_ip
+  db_database_name  = var.db_database_name
+  db_server_name    = var.db_server_name
   db_admin_password = var.db_admin_password
-  tags = var.tags
+  tags              = var.tags
 }
 
 module "step3" {
-  source = "./modules/course6"
-  knou_mall_rg = azurerm_resource_group.knou_mall_rg
-  my_ip = var.my_ip
-  knou_mall_subnet = azurerm_subnet.knou_mall_subnet
-  key_vault_name = var.key_vault_name
-  key_vault_secret_name = var.key_vault_secret_name
+  source                    = "./modules/course6"
+  knou_mall_rg              = azurerm_resource_group.knou_mall_rg
+  my_ip                     = var.my_ip
+  knou_mall_subnet          = azurerm_subnet.knou_mall_subnet
+  key_vault_name            = var.key_vault_name
+  key_vault_secret_name     = var.key_vault_secret_name
   key_vault_secret_password = var.key_vault_secret_password
-  tags = var.tags
+  tags                      = var.tags
 }

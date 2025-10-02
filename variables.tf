@@ -2,16 +2,16 @@
 variable "location" {
   description = "Azure location for all resources"
   type        = string
-  default     = "japaneast"  ## 지역명 (임의의 지역으로 바꾸기)
+  default     = "japaneast" ## 지역명 (임의의 지역으로 바꾸기)
 }
 
 variable "tags" {
   description = "Common tags"
   type        = map(string)
-  default     = { ## 임의의 변수로 바꾸기
+  default = { ## 임의의 변수로 바꾸기
     application = "knou_mall"
-    service = "web"
-    env = "dev"
+    service     = "web"
+    env         = "dev"
   }
 }
 
@@ -46,13 +46,13 @@ variable "db_admin_password" {
 }
 
 variable "key_vault_name" {
-  type        = string
-  default     = "mall-db-keyxxxx" ## xxxx 를 고유한 임의의 이름으로 바꾸기.(key부분은 변경X)
+  type    = string
+  default = "mall-db-keyxxxx" ## xxxx 를 고유한 임의의 이름으로 바꾸기.(key부분은 변경X)
 }
 
 variable "key_vault_secret_name" {
-  type        = string
-  default     = "knou-mall-db-admin-pwd"   ## 키 비밀명 (임의의 문자열로 바꾸기)
+  type    = string
+  default = "knou-mall-db-admin-pwd" ## 키 비밀명 (임의의 문자열로 바꾸기)
 }
 
 variable "key_vault_secret_password" {

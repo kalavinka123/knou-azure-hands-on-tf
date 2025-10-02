@@ -21,9 +21,9 @@ variable "db_server_name" {
 }
 
 variable "db_admin_password" {
-  type      = string
+  type        = string
   description = "Administrator password for PostgreSQL server"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "tags" {

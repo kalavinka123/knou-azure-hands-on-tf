@@ -12,7 +12,7 @@ variable "my_ip" {
 
 variable "knou_mall_subnet" {
   type = object({
-    id   = string
+    id = string
   })
 }
 

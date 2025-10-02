@@ -7,7 +7,7 @@ resource "azurerm_network_interface" "knou_mall_nic" {
     name                          = "internal"
     subnet_id                     = var.knou_mall_subnet.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id           = azurerm_public_ip.knou_mall_ip.id
+    public_ip_address_id          = azurerm_public_ip.knou_mall_ip.id
   }
 }
 
@@ -30,8 +30,8 @@ resource "azurerm_network_security_group" "knou_mall_sg" {
 }
 
 resource "azurerm_network_interface_security_group_association" "knou_mall_nic_sg_asso" {
-  network_interface_id          = azurerm_network_interface.knou_mall_nic.id
-  network_security_group_id     = azurerm_network_security_group.knou_mall_sg.id
+  network_interface_id      = azurerm_network_interface.knou_mall_nic.id
+  network_security_group_id = azurerm_network_security_group.knou_mall_sg.id
 }
 
 resource "azurerm_public_ip" "knou_mall_ip" {

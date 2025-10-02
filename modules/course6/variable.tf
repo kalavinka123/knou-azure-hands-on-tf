@@ -12,16 +12,16 @@ variable "my_ip" {
 
 variable "knou_mall_subnet" {
   type = object({
-    id = string
+    id   = string
   })
 }
 
 variable "key_vault_name" {
-  type = string
+  type        = string
 }
 
 variable "key_vault_secret_name" {
-  type = string
+  type        = string
 }
 
 variable "key_vault_secret_password" {

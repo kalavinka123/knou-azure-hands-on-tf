@@ -30,7 +30,7 @@ variable "admin_public_key_path" {
 variable "db_database_name" {
   description = "Target database name for CREATE DATABASE statement"
   type        = string
-  default     = "mall-db" ## 데이터베이스명 (임의의 이름으로 바꾸기)
+  default     = "mall_db" ## 데이터베이스명 (임의의 이름으로 바꾸기)
 }
 
 variable "db_server_name" {
